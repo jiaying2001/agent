@@ -1,0 +1,16 @@
+server:
+  hostname: "jiaying.info"
+  port: 8081
+
+kafka:
+  hostname: "jiaying.info"
+  port: 9092
+  topic: "log_queue"
+  client:
+    id: "agent"
+
+zookeeper:
+  hostname: "jiaying.info"
+  port: 2181
+  ids:
+    config: "/ids"

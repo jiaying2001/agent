@@ -1,0 +1,16 @@
+server:
+  hostname: "localhost"
+  port: 8081
+
+kafka:
+  hostname: "localhost"
+  port: 9092
+  topic: "test"
+  client:
+    id: "test"
+
+zookeeper:
+  hostname: "localhost"
+  port: 2181
+  ids:
+    config: "/ids"
