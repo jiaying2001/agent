@@ -12,7 +12,7 @@ type Header struct {
 	Os        string `json:"os"`
 	AppName   string `json:"appName"`
 	Pid       string `json:"pid"`
-	UserID    int    `json:"userID"`
+	UserID    int    `json:"userId"`
 	Path      string `json:"path"`
 }
 
