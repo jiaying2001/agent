@@ -18,6 +18,7 @@ var (
 type Identity struct {
 	AuthToken string
 	UserName  string
+	UserID    int
 }
 
 type Files struct {

@@ -24,6 +24,7 @@ type Harvester struct {
 	Shutdown   *sync.WaitGroup
 	Interrupt  bool
 	State      int
+	UserId     int `json:"user_id"`
 }
 
 const (
@@ -41,6 +42,7 @@ func CreateHarvester(fileName string, fileFormat string) *Harvester {
 		&sync.WaitGroup{},
 		false,
 		Created,
+		store.Pass.UserID,
 	}
 }
 
@@ -112,6 +114,7 @@ func (h *Harvester) Run(parser parser.Parser) {
 					AppName:   appName,
 					Pid:       pid,
 					Os:        store.OsI.Version,
+					UserID:    store.Pass.UserID,
 				},
 				Body: dto.Body{
 					Content: value,

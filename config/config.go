@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/jiaying2001/agent/harvester"
+	"github.com/jiaying2001/agent/store"
 	"github.com/jiaying2001/agent/transportation"
 )
 
@@ -23,6 +24,9 @@ func GetConfigs() *[]harvester.Harvester {
 	}
 	if configs.Code != 200 {
 		fmt.Println("请求状态码异常")
+	}
+	if len(configs.Configs) != 0 {
+		store.Pass.UserID = configs.Configs[0].UserId
 	}
 	return &configs.Configs
 }

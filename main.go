@@ -7,6 +7,7 @@ import (
 	"github.com/jiaying2001/agent/myzk"
 	"github.com/jiaying2001/agent/store"
 	"os"
+	"time"
 )
 
 func login() {
@@ -31,13 +32,11 @@ func login() {
 }
 
 func main() {
-	login()
 	myzk.LoadIdsNodes()
 	myzk.ListenIdsNodes()
+	time.Sleep(time.Second * 1)
+	login()
 	myzk.Listen("/" + store.Pass.UserName) // Listen a ZK node
 	launcher.L.Launch()
 	select {}
 }
-
-//func main() {
-//}
