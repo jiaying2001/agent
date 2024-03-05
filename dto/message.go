@@ -13,6 +13,7 @@ type Header struct {
 	AppName   string `json:"appName"`
 	Pid       string `json:"pid"`
 	UserID    int    `json:"userID"`
+	Path      string `json:"path"`
 }
 
 type Body struct {

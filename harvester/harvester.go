@@ -115,6 +115,7 @@ func (h *Harvester) Run(parser parser.Parser) {
 					Pid:       pid,
 					Os:        store.OsI.Version,
 					UserID:    store.Pass.UserID,
+					Path:      h.Path,
 				},
 				Body: dto.Body{
 					Content: value,
